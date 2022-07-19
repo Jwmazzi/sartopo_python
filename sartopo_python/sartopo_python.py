@@ -410,8 +410,8 @@ class SartopoSession():
             for i in range(len(mapSFIDs)):
                 if mapSFIDs[i] not in self.mapIDs:
                     prop=self.mapData['state']['features'][i]['properties']
-                    logging.info('  Deleting '+str(prop['class'])+':'+str(prop['title']))
-                    logging.info('     [ id='+mapSFIDs[i]+' ]')
+                    # logging.info('  Deleting '+str(prop['class'])+':'+str(prop['title']))
+                    # logging.info('     [ id='+mapSFIDs[i]+' ]')
                     if self.deletedFeatureCallback:
                         self.deletedFeatureCallback(self.mapData['state']['features'][i])
                     del self.mapData['state']['features'][i]
@@ -942,7 +942,7 @@ class SartopoSession():
         #     return self.sendRequest("post","since/"+str(since),j,id=str(existingId),returnJson="ID")
 
     def delMarker(self,existingId=""):
-        self.delFeature("marker",existingId=existingId)
+        self.delFeature("marker",id=existingId)
 
     def delFeature(self,fClass,id=""):
         return self.sendRequest("delete",fClass,None,id=str(id),returnJson="ALL")

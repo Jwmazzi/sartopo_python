@@ -18,6 +18,7 @@ setuptools.setup(
     download_url="https://github.com/ncssar/sartopo_python/archive/1.1.2.tar.gz",
     install_requires=[
         'requests',
+        'shapely'
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
